@@ -73,6 +73,18 @@ To stop the App use:
 docker container stop twitter-api
 ```
 
+## API
+
+<table>
+<tr>
+<td>
+</td>
+<td colspan="4"><strong>Methods</strong>
+</td>
+</tr>
+</table>
+
+
 ## Useful References:
 
 - [Docker Documentation CLI](https://docs.docker.com/engine/reference/commandline/cli/)
