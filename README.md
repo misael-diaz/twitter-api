@@ -35,7 +35,7 @@ CMD yarn start
 
 Build the image:
 ```sh
-docker image build -t im-twitter-api
+docker image build -t im-twitter-api .
 ```
 
 ## Deploy the Dockerized HTTP App
