@@ -55,3 +55,7 @@ docker container run -it -p 8080:8080 -d --name twitter-api im-twitter-api
 ```sh
 docker container stop twitter-api
 ```
+
+## Useful References:
+
+- [Docker Documentation CLI](https://docs.docker.com/engine/reference/commandline/cli/)
