@@ -42,12 +42,12 @@ docker image build -t im-twitter-api .
 
 Deploy the Docker Container of the App on the foreground (useful for testing):
 ```sh
-docker container run -it -p 8080:8080 --name twitter-api im-twitter-api
+docker container run -it -p 8080:8080 --name twitter-api --env-file .env im-twitter-api
 ```
 
 alternatively, you may execute the App on the background by detaching:
 ```sh
-docker container run -it -p 8080:8080 -d --name twitter-api im-twitter-api --env-file=.env
+docker container run -it -p 8080:8080 -d --name twitter-api --env-file .env im-twitter-api
 ```
 
 ## Stop the Dockerized HTTP App
