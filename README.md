@@ -10,6 +10,8 @@ Academic use
 
 ## Create a .env file
 
+Use your preferred text editor to create the `.env` file:
+
 ```sh
 HTTP_HOST=twitter-api
 HTTP_PORT=8080
@@ -28,7 +30,7 @@ docker network create webnetwork
 
 ## Dockerize the HTTP App
 
-Create a Dockerfile for building the App Docker Image:
+Use your preferred text editor to create the Dockerfile for building the App Docker Image:
 
 ```sh
 FROM node:16
