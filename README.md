@@ -73,6 +73,30 @@ To stop the App use:
 docker container stop twitter-api
 ```
 
+## API
+
+<table><!-- Table Starts -->
+<tr><!-- Table Row Starts -->
+<td><!-- Empty Table Data Cell --></td>
+<td colspan="4"><strong>Methods</strong></td><!-- This Data Cell Spans four Columns -->
+</tr><!-- Table Row Ends -->
+<tr><!-- Table Row Containing URL, GET, POST, and DELETE -->
+<td><strong>URL   </strong></td>
+<td><strong>GET   </strong></td>
+<td><strong>POST  </strong></td>
+<td><strong>PUT   </strong></td>
+<td><strong>DELETE</strong></td>
+</tr><!-- Table Row Ends -->
+<tr><!-- Table Row Containing Info about the HTTP Methods on the Root Route -->
+<td>/</td>				<!-- Root Route `/' -->
+<td>Displays "App works!"</td>		<!-- HTTP GET -->
+<td>Error</td>				<!-- HTTP POST -->
+<td>Error</td>				<!-- HTTP PUT -->
+<td>Error</td>				<!-- HTTP DELETE -->
+</tr><!-- Table Row Ends -->
+</table><!-- Table Ends -->
+
+
 ## Useful References:
 
 - [Docker Documentation CLI](https://docs.docker.com/engine/reference/commandline/cli/)
