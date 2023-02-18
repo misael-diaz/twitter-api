@@ -28,12 +28,12 @@ const dotenv = require("dotenv");	// for importing environment variables
 dotenv.config();			// imports environment variables from .env file
 
 
-// sets the HTTP Host and Port from the respective environment variables
+// sets the HTTP Host and Port from Environment variables or from defaults if undefined
 const config = {
 
 	http: {
 		host: process.env.HTTP_HOST || "0.0.0.0",
-		port: process.env.PORT || process.env.HTTP_PORT,
+		port: process.env.HTTP_PORT || 8080
 	}
 
 };
