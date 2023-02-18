@@ -78,32 +78,21 @@ docker container stop twitter-api
 <table><!-- Table Starts -->
 <tr><!-- Table Row Starts -->
 <td><!-- Empty Table Data Cell --></td>
-<td colspan="4"><strong>Methods</strong><!-- This Data Cell Spans four Columns -->
-</td>
+<td colspan="4"><strong>Methods</strong></td><!-- This Data Cell Spans four Columns -->
 </tr><!-- Table Row Ends -->
 <tr><!-- Table Row Containing URL, GET, POST, and DELETE -->
-<td><strong>URL</strong> 
-</td>
-<td><strong>GET</strong> 
-</td>
-<td><strong>POST</strong> 
-</td>
-<td><strong>PUT</strong> 
-</td>
-<td><strong>DELETE</strong> 
-</td>
+<td><strong>URL   </strong></td>
+<td><strong>GET   </strong></td>
+<td><strong>POST  </strong></td>
+<td><strong>PUT   </strong></td>
+<td><strong>DELETE</strong></td>
 </tr>
 <tr><!-- Table Row Containing Info about the HTTP Methods on the Root Route -->
-<td>/
-</td>
-<td>Displays "App works!"		<!-- HTTP GET -->
-</td>
-<td>Error				<!-- HTTP POST -->
-</td>
-<td>Error				<!-- HTTP PUT -->
-</td>
-<td>Error				<!-- HTTP DELETE -->
-</td>
+<td>/</td>
+<td>Displays "App works!"</td>		<!-- HTTP GET -->
+<td>Error</td>				<!-- HTTP POST -->
+<td>Error</td>				<!-- HTTP PUT -->
+<td>Error</td>				<!-- HTTP DELETE -->
 </tr>
 </table><!-- Table Ends -->
 
