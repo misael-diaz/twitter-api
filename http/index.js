@@ -31,7 +31,7 @@ References:
 
 const express = require("express");	// imports express
 const { http } = require("../config");	// gets http object from config by deconstruction
-const { port } = http;			// gets service port from http by deconstruction
+const { host, port } = http;		// gets host and port from http by deconstruction
 
 
 // instantiates the HTTP App:
@@ -63,8 +63,8 @@ app.get("*", (req, res) => {
 
 // defines the start() method for starting the HTTP App:
 const start = () => {
-	app.listen(port, () => {
-		console.log(`server running at http://localhost:${port}`);
+	app.listen(port, host, () => {
+		console.log(`server running at http://${host}:${port}`);
 	});
 };
 
