@@ -86,14 +86,14 @@ docker container stop twitter-api
 <td><strong>POST  </strong></td>
 <td><strong>PUT   </strong></td>
 <td><strong>DELETE</strong></td>
-</tr>
+</tr><!-- Table Row Ends -->
 <tr><!-- Table Row Containing Info about the HTTP Methods on the Root Route -->
-<td>/</td>
+<td>/</td>				<!-- Root Route `/' -->
 <td>Displays "App works!"</td>		<!-- HTTP GET -->
 <td>Error</td>				<!-- HTTP POST -->
 <td>Error</td>				<!-- HTTP PUT -->
 <td>Error</td>				<!-- HTTP DELETE -->
-</tr>
+</tr><!-- Table Row Ends -->
 </table><!-- Table Ends -->
 
 
