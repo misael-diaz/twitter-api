@@ -94,6 +94,18 @@ docker container stop twitter-api
 <td><strong>DELETE</strong> 
 </td>
 </tr>
+<tr>
+<td>/
+</td>
+<td>Displays "App works!"
+</td>
+<td>Error
+</td>
+<td>Error
+</td>
+<td>Error
+</td>
+</tr>
 </table>
 
 
