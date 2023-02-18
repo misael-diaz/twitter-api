@@ -82,6 +82,18 @@ docker container stop twitter-api
 <td colspan="4"><strong>Methods</strong>
 </td>
 </tr>
+<tr>
+<td><strong>URL</strong> 
+</td>
+<td><strong>GET</strong> 
+</td>
+<td><strong>POST</strong> 
+</td>
+<td><strong>PUT</strong> 
+</td>
+<td><strong>DELETE</strong> 
+</td>
+</tr>
 </table>
 
 
