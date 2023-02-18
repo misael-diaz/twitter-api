@@ -18,6 +18,14 @@ HTTP_PORT=8080
 Note that you may use other hostname and/or port; however, bear in mind that
 you will need to edit the Dockerfile and the docker commands accordingly.
 
+## Create a Network with Docker
+
+Create a network with Docker so that DNS lookup works on App startup:
+
+```sh
+docker network create webnetwork
+```
+
 ## Dockerize the HTTP App
 
 Create a Dockerfile for building the App Docker Image:
@@ -42,13 +50,18 @@ docker image build -t im-twitter-api .
 
 Deploy the Docker Container of the App on the foreground (useful for testing):
 ```sh
-docker container run -it -p 8080:8080 --name twitter-api --env-file .env im-twitter-api
+docker container run -it -p 8080:8080 --name twitter-api --network webnetwork --env-file .env im-twitter-api
 ```
 
 alternatively, you may execute the App on the background by detaching:
 ```sh
-docker container run -it -p 8080:8080 -d --name twitter-api --env-file .env im-twitter-api
+docker container run -it -p 8080:8080 -d --name twitter-api --network webnetwork --env-file .env im-twitter-api
 ```
+
+Note that the command requests docker to connect the App to the network `webnetwork`,
+that the name of the App `twitter-api` is the same as the `HTTP_HOST` in `.env`,
+and that the published port `8080` is the same as the `HTTP_PORT` in `.env` and the
+exposed port in the Dockerfile.
 
 ## Stop the Dockerized HTTP App
 
