@@ -75,14 +75,13 @@ docker container stop twitter-api
 
 ## API
 
-<table>
-<tr>
-<td>
+<table><!-- Table Starts -->
+<tr><!-- Table Row Starts -->
+<td><!-- Empty Table Data Cell --></td>
+<td colspan="4"><strong>Methods</strong><!-- This Data Cell Spans four Columns -->
 </td>
-<td colspan="4"><strong>Methods</strong>
-</td>
-</tr>
-<tr>
+</tr><!-- Table Row Ends -->
+<tr><!-- Table Row Containing URL, GET, POST, and DELETE -->
 <td><strong>URL</strong> 
 </td>
 <td><strong>GET</strong> 
@@ -94,19 +93,19 @@ docker container stop twitter-api
 <td><strong>DELETE</strong> 
 </td>
 </tr>
-<tr>
+<tr><!-- Table Row Containing Info about the HTTP Methods on the Root Route -->
 <td>/
 </td>
-<td>Displays "App works!"
+<td>Displays "App works!"		<!-- HTTP GET -->
 </td>
-<td>Error
+<td>Error				<!-- HTTP POST -->
 </td>
-<td>Error
+<td>Error				<!-- HTTP PUT -->
 </td>
-<td>Error
+<td>Error				<!-- HTTP DELETE -->
 </td>
 </tr>
-</table>
+</table><!-- Table Ends -->
 
 
 ## Useful References:
