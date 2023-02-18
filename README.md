@@ -52,6 +52,8 @@ docker container run -it -p 8080:8080 -d --name twitter-api im-twitter-api
 
 ## Stop the Dockerized HTTP App
 
+To stop the App use:
+
 ```sh
 docker container stop twitter-api
 ```
