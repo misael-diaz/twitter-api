@@ -28,12 +28,20 @@ const dotenv = require("dotenv");	// for importing environment variables
 dotenv.config();			// imports environment variables from .env file
 
 
-// sets the HTTP Host and Port from Environment variables or from defaults if undefined
 const config = {
 
+	// sets the Host and Port from Environment variables or from defaults if undefined
 	http: {
 		host: process.env.HTTP_HOST || "0.0.0.0",
 		port: process.env.HTTP_PORT || 8080
+	},
+
+	// sets the jsonwebtoken `jwt' header and secret keys
+	jwt: {
+		token: {
+			secretKey: process.env.JWT_SECRET_KEY,
+			headerKey: process.env.JWT_HEADER_KEY
+		}
 	}
 
 };
