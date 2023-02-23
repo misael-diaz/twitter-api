@@ -30,6 +30,7 @@ References:
 
 
 const express = require("express");	// imports express
+const api = require("../api");		// imports API router
 const { http } = require("../config");	// gets http object from config by deconstruction
 const { host, port } = http;		// gets host and port from http by deconstruction
 
@@ -44,6 +45,7 @@ const app = express();
 
 
 app.use(express.json());		// mounts middleware for parsing json requests
+app.use("/api", api);			// mounts API at /api
 
 
 // configures the HTTP App:
