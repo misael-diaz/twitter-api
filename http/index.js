@@ -1,8 +1,3 @@
-
-
-// imports dependencies:
-
-
 const express = require("express");	// imports express
 const api = require("../api");		// imports API router
 const { http } = require("../config");	// gets http object from config by deconstruction
