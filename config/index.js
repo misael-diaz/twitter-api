@@ -16,6 +16,11 @@ const config = {
       secretKey: process.env.JWT_SECRET_KEY,
       headerKey: process.env.JWT_HEADER_KEY
     }
+  },
+
+  // sets the database connection string
+  db: {
+    connectionString: process.env.DB_CONNECTION_STRING
   }
 
 };
@@ -31,7 +36,7 @@ source: index.js
 author: @misael-diaz
 
 Synopsis:
-Configures the HTTP Host and Port of the App.
+Configures the HTTP Host and Port of the App and the Database Connection String.
 
 
 Copyright (c) 2023 Misael Diaz-Maldonado
