@@ -1,3 +1,8 @@
+const { start } = require("./http");		// imports the http start() method
+const seeds = require("./seeds");		// starts and seeds the database
+
+start();					// starts the http app
+
 /*
 
 Twitter API							February 17, 2023
@@ -19,6 +24,3 @@ References:
 [0] https://github.com/jestrade/api-twitter
 
 */
-
-const { start } = require("./http");		// imports the http start() method
-start();					// starts the http app
