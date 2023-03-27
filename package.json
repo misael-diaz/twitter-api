@@ -3,10 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-	  "start": "node index.js"
+    "start": "node index.js"
   },
   "repository": "git@github.com:misael-diaz/twitter-api.git",
   "author": "misael-diaz <20134959+misael-diaz@users.noreply.github.com>",
   "license": "GPL-3.0-or-later",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.3",
+    "n": "^9.0.1"
+  }
 }
