@@ -27,21 +27,21 @@ app.use("/api", api);			// mounts API at /api
 
 // configures the app to answer HTTP GET request to the root route `/':
 app.get("/", (req, res) => {
-	res.send("App works!");
+  res.send("App works!");
 });
 
 
 // configures the app to handle undefined HTTP GET routes:
 app.get("*", (req, res) => {
-	res.send("undefined route");
+  res.send("undefined route");
 });
 
 
 // defines the start() method for starting the HTTP App:
 const start = () => {
-	app.listen(port, host, () => {
-		console.log(`server running at http://${host}:${port}`);
-	});
+  app.listen(port, host, () => {
+    console.log(`server running at http://${host}:${port}`);
+  });
 };
 
 
