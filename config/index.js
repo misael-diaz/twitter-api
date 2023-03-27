@@ -1,8 +1,3 @@
-
-
-// imports dependencies:
-
-
 const dotenv = require("dotenv");	// for importing environment variables
 dotenv.config();			// imports environment variables from .env file
 
