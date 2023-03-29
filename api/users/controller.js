@@ -1,26 +1,3 @@
-/*
-
-Twitter API							February 22, 2023
-
-source: controller.js
-author: @misael-diaz
-
-Synopsis:
-Exports API User Controller.
-
-
-Copyright (c) 2023 Misael Diaz-Maldonado
-This file is released under the GNU General Public License as published
-by the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-
-References:
-[0] https://github.com/jestrade/api-twitter
-[1] https://www.geeksforgeeks.org/jwt-authentication-with-node-js/
-
-*/
-
 const jwt = require("jsonwebtoken");
 const config = require("../../config");
 
@@ -79,3 +56,26 @@ const logout = (req, res) => {
 
 
 module.exports = { login, logout }
+
+/*
+
+Twitter API							February 22, 2023
+
+source: controller.js
+author: @misael-diaz
+
+Synopsis:
+Exports API User Controller.
+
+
+Copyright (c) 2023 Misael Diaz-Maldonado
+This file is released under the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+
+References:
+[0] https://github.com/jestrade/api-twitter
+[1] https://www.geeksforgeeks.org/jwt-authentication-with-node-js/
+
+*/
