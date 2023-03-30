@@ -1,47 +1,41 @@
 const jwt = require("jsonwebtoken");
 const config = require("../../config");
+const users = require("./users");
 
 
 const { token } = config.jwt;
 
 
-const login = (req, res) => {
+const login = async (req, res) => {
   // handles POST requests to /login
 
-
-  // Note: temporary array of users for testing
-  const users = [ {username: "test", password: "passwd", userID: "117"} ];
-
-
   // gets username and password from request body
-  const credentials = req.body;
-
-
-  // gets the first user that matches the username in the passed credentials
-  const user = users.find(u => u.username == credentials.username);
-
-
-  const isInvalidUser = (user == null);
+  const { user } = req.body;
+  const { username, password } = user;
+  const key = { username: username };
+  const usr = await users.findOne(key).exec();
+  const isInvalidUser = (usr == null);
 
   if (isInvalidUser)
     // reports user if the username is invalid (for testing only)
   {
-    res.json({ message: "invalid user" });
+    res.status(500).json({ message: "invalid user" });
   }
-  else if (credentials.password != user.password)
+  else if (password !== usr.password)
     // reports user if the password is invalid (for testing only)
   {
-    res.json({ message: "invalid password" });
+    res.status(500).json({ message: "invalid password" });
   }
   else
     // otherwise, encodes the userID in a token for future authentications
   {
-    const { userID } = user;
+    const { _id } = usr;
+    const userID = _id;
     const t = jwt.sign({ userID }, token.secretKey);
 
     res.status(200).json({
       message: "successful login",
-      username: credentials.username,
+      username: username,
       token: t
     });
   }
@@ -77,5 +71,12 @@ by the Free Software Foundation, either version 3 of the License, or
 References:
 [0] https://github.com/jestrade/api-twitter
 [1] https://www.geeksforgeeks.org/jwt-authentication-with-node-js/
+
+*/
+
+/*
+
+TODO:
+[ ] add code to authenticate users that supply the email in lieu of the username
 
 */
