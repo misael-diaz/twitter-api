@@ -51,6 +51,15 @@ References:
 
 /*
 
+TODO:
+[ ] add the curl tutorial-like comments here to the wiki of the repository
+[ ] remove the curl tutorial-like comments from this source file
+
+*/
+
+
+/*
+
 
 NOTES: Authenticating with curl
 
