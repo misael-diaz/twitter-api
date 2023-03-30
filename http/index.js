@@ -1,4 +1,5 @@
 const express = require("express");	// imports express
+const cors = require("cors");		// imports CORS
 const api = require("../api");		// imports API router
 const { http } = require("../config");	// gets http object from config by deconstruction
 const { host, port } = http;		// gets host and port from http by deconstruction
@@ -14,6 +15,7 @@ const app = express();
 
 
 app.use(express.json());		// mounts middleware for parsing json requests
+app.use(cors());			// mounts middleware for parsing CORS requests
 app.use("/api", api);			// mounts API at /api
 
 
@@ -22,7 +24,7 @@ app.use("/api", api);			// mounts API at /api
 
 // configures the app to answer HTTP GET request to the root route `/':
 app.get("/", (req, res) => {
-  res.send("App works!");
+  res.status(200).json("App works!");
 });
 
 
@@ -66,5 +68,7 @@ References:
 [3] app.use(): https://www.geeksforgeeks.org/express-js-app-use-function/
 [4] express.json(): https://www.geeksforgeeks.org/express-js-express-json-function/
 [5] app.get(): https://www.geeksforgeeks.org/express-js-app-get-request-function/
+[6] https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+[7] https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
 */
