@@ -1,28 +1,3 @@
-/*
-
-Twitter API							February 20, 2023
-
-source: router.js
-author: @misael-diaz
-
-Synopsis:
-Configures and Exports API User Router.
-
-
-Copyright (c) 2023 Misael Diaz-Maldonado
-This file is released under the GNU General Public License as published
-by the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-
-References:
-[0] https://github.com/jestrade/api-twitter
-[1] https://www.geeksforgeeks.org/jwt-authentication-with-node-js/
-[2] https://stackoverflow.com/questions/13147693/how-to-extract-request-http-headers-from-a-request-using-nodejs-connect/30302180#30302180
-
-*/
-
-
 const express = require("express");
 const authenticator = require("../middleware/authenticator");
 const validator = require("../middleware/validator");
@@ -47,6 +22,31 @@ router.route("/authenticate").get(authenticator, (req, res) => {
 
 
 module.exports = router;
+
+
+/*
+
+Twitter API							February 20, 2023
+
+source: router.js
+author: @misael-diaz
+
+Synopsis:
+Configures and Exports API User Router.
+
+
+Copyright (c) 2023 Misael Diaz-Maldonado
+This file is released under the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+
+References:
+[0] https://github.com/jestrade/api-twitter
+[1] https://www.geeksforgeeks.org/jwt-authentication-with-node-js/
+[2] https://stackoverflow.com/questions/13147693/how-to-extract-request-http-headers-from-a-request-using-nodejs-connect/30302180#30302180
+
+*/
 
 
 /*
