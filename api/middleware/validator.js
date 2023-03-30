@@ -1,41 +1,39 @@
-
-
 const validate = (req) => {
-// validates the username and password, returns an array of errors
+  // validates the username and password, returns an array of errors
 
-	const { username, password } = req.body;
+  const { username, password } = req.body;
 
-	let errors = [];
-	if (username == null)
-	{
-		const e = "empty username field";
-		errors.push(e);
-	}
+  let errors = [];
+  if (username == null)
+  {
+    const e = "empty username field";
+    errors.push(e);
+  }
 
-	if (password == null)
-	{
-		const e = "empty password field";
-		errors.push(e);
-	}
+  if (password == null)
+  {
+    const e = "empty password field";
+    errors.push(e);
+  }
 
-	return errors;
+  return errors;
 }
 
 
 const validateLogin = (req, res, next) => {
-// executes next() if login credentials are valid, sends error messages otherwise
+  // executes next() if login credentials are valid, sends error messages otherwise
 
-	const errors = validate(req);
+  const errors = validate(req);
 
-	const numErrors = errors.length;
-	if (numErrors != 0)
-	{
-		res.status(500).json({messages: errors});
-	}
-	else
-	{
-		next();
-	}
+  const numErrors = errors.length;
+  if (numErrors != 0)
+  {
+    res.status(500).json({messages: errors});
+  }
+  else
+  {
+    next();
+  }
 
 };
 
