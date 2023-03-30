@@ -1,3 +1,29 @@
+const express = require("express");
+const authenticator = require("../middleware/authenticator");
+const validator = require("../middleware/validator");
+const controller = require("./controller");
+
+
+const { validateLogin } = validator;
+const { login, logout } = controller;
+
+
+const router = express.Router();
+
+
+router.route("/login").post(validateLogin, login);
+router.route("/logout").get(authenticator, logout);
+
+router.route("/authenticate").get(authenticator, (req, res) => {
+	// temporary callback that answers with the user ID for testing
+	const { userID } = req.body;
+	res.status(200).json({ message: "authorized user", userID: userID });
+});
+
+
+module.exports = router;
+
+
 /*
 
 Twitter API							February 20, 2023
@@ -23,30 +49,13 @@ References:
 */
 
 
-const express = require("express");
-const authenticator = require("../middleware/authenticator");
-const validator = require("../middleware/validator");
-const controller = require("./controller");
+/*
 
+TODO:
+[ ] add the curl tutorial-like comments here to the wiki of the repository
+[ ] remove the curl tutorial-like comments from this source file
 
-const { validateLogin } = validator;
-const { login, logout } = controller;
-
-
-const router = express.Router();
-
-
-router.route("/login").post(validateLogin, login);
-router.route("/logout").get(authenticator, logout);
-
-router.route("/authenticate").get(authenticator, (req, res) => {
-	// temporary callback that answers with the user ID for testing
-	const { userID } = req.body;
-	res.status(200).json({ message: "authorized user", userID: userID });
-});
-
-
-module.exports = router;
+*/
 
 
 /*
