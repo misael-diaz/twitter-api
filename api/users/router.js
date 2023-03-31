@@ -4,13 +4,14 @@ const validator = require("../middleware/validator");
 const controller = require("./controller");
 
 
-const { validateLogin } = validator;
-const { login, logout } = controller;
+const { validateLogin, validateSignUp } = validator;
+const { signup, login, logout } = controller;
 
 
 const router = express.Router();
 
 
+router.route("/signup").post(validateSignUp, signup);
 router.route("/login").post(validateLogin, login);
 router.route("/logout").get(authenticator, logout);
 
