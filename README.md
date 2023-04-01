@@ -108,6 +108,23 @@ docker container stop twitter-api
     <td>Error</td>				<!-- HTTP PUT -->
     <td>Error</td>				<!-- HTTP DELETE -->
   </tr>
+  <tr>
+    <td>/api/users/signup</td>			<!-- /signup route -->
+    <td>Error</td>				<!-- HTTP GET -->
+    <td>					<!-- HTTP POST -->
+      <p>Create User</p>
+      <p><code>{</code></p>
+      <p><code>firstName,</code></p>
+      <p><code>lastName,</code></p>
+      <p><code>email,</code></p>
+      <p><code>username,</code></p>
+      <p><code>password</code></p>
+      <p><code>}</code></p>
+      <p><strong><code>public</code></strong></p>
+    </td>
+    <td>Error</td>				<!-- HTTP PUT -->
+    <td>Error</td>				<!-- HTTP DELETE -->
+  </tr>
 </table><!-- Table Ends -->
 
 
