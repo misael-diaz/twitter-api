@@ -42,6 +42,15 @@ const login = async (req, res) => {
 
 };
 
+const signup = async (req, res) => {	// handles POST requests to /signup
+
+  const { user } = req.body;
+  const { firstName, lastName, email, username, password } = user;
+  const usr = new users(user);
+  await usr.save();
+  res.status(200).json({ message: "new account has been created successfully" });
+
+}
 
 const logout = (req, res) => {
   // handles GET requests to /logout
@@ -49,7 +58,7 @@ const logout = (req, res) => {
 }
 
 
-module.exports = { login, logout }
+module.exports = { signup, login, logout }
 
 /*
 
