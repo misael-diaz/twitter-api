@@ -76,24 +76,55 @@ docker container stop twitter-api
 ## API
 
 <table><!-- Table Starts -->
-<tr><!-- Table Row Starts -->
-<td><!-- Empty Table Data Cell --></td>
-<td colspan="4"><strong>Methods</strong></td><!-- This Data Cell Spans four Columns -->
-</tr><!-- Table Row Ends -->
-<tr><!-- Table Row Containing URL, GET, POST, and DELETE -->
-<td><strong>URL   </strong></td>
-<td><strong>GET   </strong></td>
-<td><strong>POST  </strong></td>
-<td><strong>PUT   </strong></td>
-<td><strong>DELETE</strong></td>
-</tr><!-- Table Row Ends -->
-<tr><!-- Table Row Containing Info about the HTTP Methods on the Root Route -->
-<td>/</td>				<!-- Root Route `/' -->
-<td>Displays "App works!"</td>		<!-- HTTP GET -->
-<td>Error</td>				<!-- HTTP POST -->
-<td>Error</td>				<!-- HTTP PUT -->
-<td>Error</td>				<!-- HTTP DELETE -->
-</tr><!-- Table Row Ends -->
+  <tr><!-- Table Row Starts -->
+    <td><!-- Empty Table Data Cell --></td>
+    <td colspan="4"><strong>Methods</strong></td><!-- This Data Cell Spans four Columns -->
+  </tr><!-- Table Row Ends -->
+  <tr><!-- Table Row Containing URL, GET, POST, and DELETE -->
+    <td><strong>URL   </strong></td>
+    <td><strong>GET   </strong></td>
+    <td><strong>POST  </strong></td>
+    <td><strong>PUT   </strong></td>
+    <td><strong>DELETE</strong></td>
+  </tr><!-- Table Row Ends -->
+  <tr><!-- Table Row Containing Info about the HTTP Methods on the Root Route -->
+    <td>/</td>					<!-- Root Route `/' -->
+    <td>Displays "App works!"</td>		<!-- HTTP GET -->
+    <td>Error</td>				<!-- HTTP POST -->
+    <td>Error</td>				<!-- HTTP PUT -->
+    <td>Error</td>				<!-- HTTP DELETE -->
+  </tr><!-- Table Row Ends -->
+  <tr>
+    <td>/api/users/login</td>			<!-- /login route -->
+    <td>Error</td>				<!-- HTTP GET -->
+    <td>					<!-- HTTP POST -->
+      <p>Authenticate User</p>
+      <p><code>{</code></p>
+      <p><code>username,</code></p>
+      <p><code>password</code></p>
+      <p><code>}</code></p>
+      <p><strong><code>public</code></strong></p>
+    </td>
+    <td>Error</td>				<!-- HTTP PUT -->
+    <td>Error</td>				<!-- HTTP DELETE -->
+  </tr>
+  <tr>
+    <td>/api/users/signup</td>			<!-- /signup route -->
+    <td>Error</td>				<!-- HTTP GET -->
+    <td>					<!-- HTTP POST -->
+      <p>Create User</p>
+      <p><code>{</code></p>
+      <p><code>firstName,</code></p>
+      <p><code>lastName,</code></p>
+      <p><code>email,</code></p>
+      <p><code>username,</code></p>
+      <p><code>password</code></p>
+      <p><code>}</code></p>
+      <p><strong><code>public</code></strong></p>
+    </td>
+    <td>Error</td>				<!-- HTTP PUT -->
+    <td>Error</td>				<!-- HTTP DELETE -->
+  </tr>
 </table><!-- Table Ends -->
 
 
