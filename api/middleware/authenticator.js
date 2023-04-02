@@ -1,26 +1,3 @@
-/*
-
-Twitter API							February 20, 2023
-
-source: authenticator.js
-author: @misael-diaz
-
-Synopsis:
-Exports user authenticator.
-
-Copyright (c) 2023 Misael Diaz-Maldonado
-This file is released under the GNU General Public License as published
-by the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-
-References:
-[0] https://github.com/jestrade/api-twitter
-[1] https://www.geeksforgeeks.org/jwt-authentication-with-node-js/
-[2] https://stackoverflow.com/questions/13147693/how-to-extract-request-http-headers-from-a-request-using-nodejs-connect/30302180#30302180
-
-*/
-
 const jwt = require("jsonwebtoken");	// for client-to-server data transfer
 const config = require("../../config");	// for the header and secret token keys
 
@@ -59,3 +36,26 @@ const authenticator = (req, res, next) => {
 
 
 module.exports = authenticator;
+
+/*
+
+Twitter API							February 20, 2023
+
+source: authenticator.js
+author: @misael-diaz
+
+Synopsis:
+Exports user authenticator.
+
+Copyright (c) 2023 Misael Diaz-Maldonado
+This file is released under the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+
+References:
+[0] https://github.com/jestrade/api-twitter
+[1] https://www.geeksforgeeks.org/jwt-authentication-with-node-js/
+[2] https://stackoverflow.com/questions/13147693/how-to-extract-request-http-headers-from-a-request-using-nodejs-connect/30302180#30302180
+
+*/
