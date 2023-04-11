@@ -30,7 +30,7 @@ const login = async (req, res) => {
     // otherwise, encodes the userID in a token for future authentications
   {
     const { _id } = usr;
-    const userID = _id;
+    const userID = _id.toString();
     const t = jwt.sign({ userID }, token.secretKey);
 
     res.status(200).json({
@@ -52,13 +52,28 @@ const signup = async (req, res) => {	// handles POST requests to /signup
 
 }
 
+const list = async (req, res) => {
+  // lists all users, the list size needs to be limited in a production environment though
+
+  const usr = await users.find({}).exec();
+
+  if (usr == null)
+  {
+    res.status(200).json({ users: [] });	// responds with an empty array
+    return;
+  }
+
+  res.status(200).json({ users: usr });		// responds with an array of user objects
+
+};
+
 const logout = (req, res) => {
   // handles GET requests to /logout
   res.json({ message: "successful logout" });
 }
 
 
-module.exports = { signup, login, logout }
+module.exports = { list, signup, login, logout }
 
 /*
 

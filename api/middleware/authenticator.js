@@ -1,3 +1,41 @@
+const jwt = require("jsonwebtoken");	// for client-to-server data transfer
+const config = require("../../config");	// for the header and secret token keys
+
+const { token } = config.jwt;
+
+const authenticator = (req, res, next) => {
+  // authenticates user by verifying the token sent in the request header
+
+  try
+  {
+    // gets the token header-key from the request header (ref [2])
+    const t = req.header(token.headerKey);
+
+    // Note:
+    // Decodes the data in token if the token was signed with the private
+    // token key of the twitter-api (defined in .env).
+    const data = jwt.verify(t, token.secretKey);
+
+    if (data)
+    // gets the userID and adds it to the request body for next()
+    {
+      const { userID } = data;
+      req.body.userID = userID;
+      console.log(`token has been decoded successfully!`);
+    }
+
+    next();
+
+  }
+  catch (error)
+  {
+    res.status(401).send(error);
+  }
+};
+
+
+module.exports = authenticator;
+
 /*
 
 Twitter API							February 20, 2023
@@ -20,42 +58,3 @@ References:
 [2] https://stackoverflow.com/questions/13147693/how-to-extract-request-http-headers-from-a-request-using-nodejs-connect/30302180#30302180
 
 */
-
-const jwt = require("jsonwebtoken");	// for client-to-server data transfer
-const config = require("../../config");	// for the header and secret token keys
-
-const { token } = config.jwt;
-
-
-const authenticator = (req, res, next) => {
-// authenticates user by verifying the token sent in the request header
-
-	try
-	{
-		// gets the token header-key from the request header (ref [2])
-		const t = req.header(token.headerKey);
-
-		// Note:
-		// Decodes the data in token if the token was signed with the private
-		// token key of the twitter-api (defined in .env).
-		const data = jwt.verify(t, token.secretKey);
-
-		if (data)
-		// gets the userID and adds it to the request body for next()
-		{
-			const { userID } = data;
-			req.body.userID = userID;
-			console.log(`token has been decoded successfully!`);
-		}
-
-		next();
-
-	}
-	catch (error)
-	{
-		res.status(401).send(error);
-	}
-};
-
-
-module.exports = authenticator;
