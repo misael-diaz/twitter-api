@@ -1,16 +1,18 @@
 const express = require("express");
 const authenticator = require("../middleware/authenticator");
+const authorize = require("../middleware/authorize");
 const validator = require("../middleware/validator");
 const controller = require("./controller");
 
 
 const { validateLogin, validateSignUp } = validator;
-const { signup, login, logout } = controller;
+const { list, signup, login, logout } = controller;
 
 
 const router = express.Router();
 
 
+router.route("/list").get(authenticator, authorize, list);
 router.route("/signup").post(validateSignUp, signup);
 router.route("/login").post(validateLogin, login);
 router.route("/logout").get(authenticator, logout);
