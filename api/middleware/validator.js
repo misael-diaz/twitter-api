@@ -1,5 +1,29 @@
 const users = require("../users/users");
+const { validateLoginInfo, validateSignUpInfo } = require("../services/users");
 
+const validateLogin = (req, res, next) => {
+
+  const isInvalidLoginInfo = validateLoginInfo(req, res);
+
+  if (isInvalidLoginInfo)
+    return;
+
+  next();
+
+};
+
+const validateSignUp = async (req, res, next) => {
+
+  const isInvalidSignUpInfo = await validateSignUpInfo(req, res);
+
+  if (isInvalidSignUpInfo)
+    return;
+
+  next();
+
+};
+
+/*
 const validateLogin = (req, res, next) => {
   // executes next() if login credentials are valid, sends error messages otherwise
 
@@ -45,8 +69,10 @@ const validateLogin = (req, res, next) => {
   next();
 
 };
+*/
 
 
+/*
 const validateSignUp = async (req, res, next) => {
 
   const stored = async (key) => {
@@ -269,6 +295,7 @@ const validateSignUp = async (req, res, next) => {
   next();
 
 }
+*/
 
 module.exports = { validateLogin, validateSignUp };
 
