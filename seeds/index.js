@@ -1,3 +1,4 @@
+const bcrypt = require("bcrypt");
 const { connect } = require("../db");
 const { data } = require("./data");
 const users = require("../api/users/users");
@@ -8,6 +9,9 @@ const users = require("../api/users/users");
 
   data.forEach( async (elem) => {
 
+    const saltRounds = 12;
+    const hash = await bcrypt.hash(elem.password, saltRounds);
+    elem.password = hash;
     const user = new users(elem);
     await user.save();
 
@@ -36,5 +40,6 @@ by the Free Software Foundation, either version 3 of the License, or
 
 References:
 [0] https://github.com/jestrade/api-twitter
+[1] https://www.npmjs.com/package/bcrypt
 
 */

@@ -1,3 +1,4 @@
+const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const config = require("../../config");
 const users = require("./users");
@@ -20,8 +21,12 @@ const login = async (req, res) => {
     // reports user if the username is invalid (for testing only)
   {
     res.status(500).json({ message: "invalid user" });
+    return;
   }
-  else if (password !== usr.password)
+
+  const match = await bcrypt.compare(password, usr.password);
+
+  if (!match) //(password !== usr.password)
     // reports user if the password is invalid (for testing only)
   {
     res.status(500).json({ message: "invalid password" });
