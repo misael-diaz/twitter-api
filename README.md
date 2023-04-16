@@ -15,10 +15,15 @@ Use your preferred text editor to create the `.env` file:
 ```sh
 HTTP_HOST=twitter-api
 HTTP_PORT=8080
+JWT_SECRET_KEY=jwt_secret_key
+JWT_HEADER_KEY=jwt_header_key
+DB_CONNECTION_STRING=mongodb://localhost:27017/details
 ```
 
 Note that you may use other hostname and/or port; however, bear in mind that
 you will need to edit the Dockerfile and the docker commands accordingly.
+You are strongly encouraged to use other values for the jsonwebtoken secret
+and header keys, for the ones given here are just examples.
 
 ## Create a Network with Docker
 
