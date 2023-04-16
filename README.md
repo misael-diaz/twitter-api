@@ -44,6 +44,10 @@ RUN git clone https://github.com/misael-diaz/twitter-api.git /usr/src/app
 RUN yarn install
 RUN yarn add dotenv
 RUN yarn add express
+RUN yarn add mongoose
+RUN yarn add jsonwebtoken
+RUN yarn add bcrypt
+RUN yarn add cors
 EXPOSE 8080
 CMD yarn start
 ```
