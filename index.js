@@ -1,33 +1,5 @@
 const { start } = require("./http");		// imports the http start() method
-const { db, jwt } = require("./config");
-const { token } = jwt;
-const { secretKey, headerKey } = token;
-const { connectionString } = db;
-
-const sane = () => {
-
-  if (connectionString === undefined)
-  {
-    process.exitCode = 1;
-    const errmsg = 'DB_CONNECTION_STRING must be specified in .env file';
-    throw new Error(errmsg);
-  }
-
-  if (secretKey === undefined)
-  {
-    process.exitCode = 1;
-    const errmsg = 'JWT_SECRET_KEY must be specified in .env file';
-    throw new Error(errmsg);
-  }
-
-  if (headerKey === undefined)
-  {
-    process.exitCode = 1;
-    const errmsg = 'JWT_HEADER_KEY must be specified in .env file';
-    throw new Error(errmsg);
-  }
-
-};
+const { sane } = require("./api/services/http");
 
 try
 {
