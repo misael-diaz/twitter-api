@@ -1,7 +1,28 @@
 const { start } = require("./http");		// imports the http start() method
-const seeds = require("./seeds");		// starts and seeds the database
+const { db } = require("./config");
+const { connectionString } = db;
 
-start();					// starts the http app
+const sane = () => {
+
+  if (connectionString === undefined)
+  {
+    process.exitCode = 1;
+    const errmsg = 'DB_CONNECTION_STRING must be specified in .env file';
+    throw new Error(errmsg);
+  }
+
+};
+
+try
+{
+  sane();
+  const seeds = require("./seeds");		// starts and seeds the database
+  start();					// starts the http app
+}
+catch (err)
+{
+  console.error(err);
+}
 
 /*
 
