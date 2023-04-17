@@ -3,23 +3,29 @@ const { connect } = require("../db");
 const { data } = require("./data");
 const users = require("../api/users/users");
 
-(async () => {
+const save = async () => {
 
-  await connect();
-
-  data.forEach( async (elem) => {
-
+  for (const elem of data)
+  {
     const saltRounds = 12;
     const hash = await bcrypt.hash(elem.password, saltRounds);
     elem.password = hash;
     const user = new users(elem);
     await user.save();
-
-  });
+  }
 
   console.log(`database has been seeded!`);
 
-})();
+};
+
+const seed = async () => {
+
+  await connect();
+  await save();
+
+};
+
+module.exports = { seed };
 
 /*
 
