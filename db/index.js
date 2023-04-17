@@ -10,15 +10,8 @@ const connect = async () => {
     useNewUrlParser: true
   };
 
-  try
-  {
-    await mongoose.connect(uri, opt);
-    console.log(`successful connection to the database!`);
-  }
-  catch (e)
-  {
-    console.error(`DataBaseError code: ${e.code} info: ${e.message}`);
-  }
+  await mongoose.connect(uri, opt);
+  console.log(`successful connection to the database!`);
 
 };
 

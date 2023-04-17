@@ -35,10 +35,9 @@ app.get("*", (req, res) => {
 
 
 // defines the start() method for starting the HTTP App:
-const start = () => {
-  app.listen(port, host, () => {
-    console.log(`server running at http://${host}:${port}`);
-  });
+const start = async () => {
+  await app.listen(port, host);
+  console.log(`server running at http://${host}:${port}`);
 };
 
 

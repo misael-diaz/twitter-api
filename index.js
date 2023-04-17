@@ -1,16 +1,26 @@
 const { start } = require("./http");		// imports the http start() method
 const { sane } = require("./api/services/http");
+const { seed } = require("./seeds");
 
-try
-{
-  sane();
-  const seeds = require("./seeds");		// starts and seeds the database
-  start();					// starts the http app
-}
-catch (err)
-{
-  console.error(err);
-}
+const App = async () => {
+
+  try
+  {
+    await sane();				// performs sane checks
+    await seed();				// starts and seeds the database
+  }
+  catch (err)
+  {
+    console.error(err);
+    process.exitCode = 1
+    process.exit();
+  }
+
+  await start();				// starts the http app
+
+};
+
+App();
 
 /*
 
