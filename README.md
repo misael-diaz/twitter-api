@@ -17,7 +17,7 @@ HTTP_HOST=twitter-api
 HTTP_PORT=8080
 JWT_SECRET_KEY=jwt_secret_key
 JWT_HEADER_KEY=jwt_header_key
-DB_CONNECTION_STRING=mongodb://localhost:27017/details
+DB_CONNECTION_STRING=mongodb://mongodb:27017/details
 ```
 
 Note that you may use other hostname and/or port; however, bear in mind that
@@ -32,6 +32,24 @@ Create a network with Docker so that DNS lookup works on App startup:
 ```sh
 docker network create webnetwork
 ```
+
+## Start the MongoDB Database
+
+Pull the official image maintained by the Docker community from Docker Hub via (if you
+have not done so before):
+
+```sh
+docker pull mongo
+```
+
+Run an instance of the database
+
+```sh
+docker run --name mongodb --network webnetwork mongo
+```
+
+Note that the name mongodb is the same as the database hostname in the .env
+file. Feel free to use any other name you deem appropriate for the database.
 
 ## Dockerize the HTTP App
 
