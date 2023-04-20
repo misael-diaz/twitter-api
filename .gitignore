@@ -1,6 +1,9 @@
+node
+node_modules
 */node_modules
 */logs/*.log
 */*.env
 */*.swp
 *.env
 *.swp
+*.sh
