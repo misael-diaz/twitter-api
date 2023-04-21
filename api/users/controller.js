@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const config = require("../../config");
 const users = require("./users");
+const { isEmail } = require("../services/users");
 
 
 const { token } = config.jwt;
@@ -13,7 +14,7 @@ const login = async (req, res) => {
   // gets username and password from request body
   const { user } = req.body;
   const { username, password } = user;
-  const key = { username: username };
+  const key = ( isEmail(username) )? { email: username } : { username: username };
   const usr = await users.findOne(key).exec();
   const isInvalidUser = (usr == null);
 

@@ -109,6 +109,11 @@ const noEmail = (req, res) => {
 
 };
 
+const isEmail = (info) => {
+
+  return ( ( (info.match(/(?:@)/g) || []).length === 0)? false : true );
+
+};
 
 const noPassword = (req, res) => {
 
@@ -371,7 +376,7 @@ const validateSignUpInfo = async (req, res) => {
 
 };
 
-module.exports = { validateLoginInfo, validateSignUpInfo, isAdmin };
+module.exports = { validateLoginInfo, validateSignUpInfo, isAdmin, isEmail };
 
 /*
 
