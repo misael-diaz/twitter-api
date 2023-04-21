@@ -11,15 +11,6 @@ const { token } = config.jwt;
 const login = async (req, res) => {
   // handles POST requests to /login
 
-
-  /*
-  const isEmail = (info) => {
-
-    return ( ( (info.match(/(?:@)/g) || []).length === 0)? false : true );
-
-  };
-  */
-
   // gets username and password from request body
   const { user } = req.body;
   const { username, password } = user;
